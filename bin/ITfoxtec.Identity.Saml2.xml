@@ -1,0 +1,1314 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ITfoxtec.Identity.Saml2</name>
+    </assembly>
+    <members>
+        <member name="P:ITfoxtec.Identity.Saml2.Saml2Binding`1.RelayState">
+            <summary>
+            <para>Sets the relaystate of the message.</para>
+            <para>If the message being built is a response message, the relaystate will be included unmodified.</para>
+            <para>If the message being built is a request message, the relaystate will be encoded and compressed before being included.</para>
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Saml2PostBinding.CertificateIncludeOption">
+            <summary>
+            [Optional]
+            Default EndCertOnly (Only the end certificate is included in the X.509 chain information).
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Saml2PostBinding.PostContent">
+            <summary>
+            Html post content.
+            </summary>
+        </member>
+        <member name="T:ITfoxtec.Identity.Saml2.Saml2Configuration">
+            <summary>
+            SAML2 component configuration
+            </summary>
+        </member>
+        <member name="T:ITfoxtec.Identity.Saml2.Cryptography.Saml2X509Certificate">
+            <summary>
+            X509Certificate2 supporting dynimic privare RSA key. 
+            Supporting Azure Key Vault.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Cryptography.Saml2X509Certificate.RSA">
+            <summary>
+            Private RSA key.
+            </summary>
+        </member>
+        <member name="M:ITfoxtec.Identity.Saml2.Cryptography.Saml2X509Certificate.GetRSAPrivateKey">
+            <summary>
+            Get the private RSA key.
+            </summary>
+        </member>
+        <member name="M:ITfoxtec.Identity.Saml2.Saml2BindingExtensions.SetRelayStateQuery``1(ITfoxtec.Identity.Saml2.Saml2Binding{``0},System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Set a Dictionary of key value pairs as a Query string in the Relay State.
+            </summary>
+        </member>
+        <member name="M:ITfoxtec.Identity.Saml2.Saml2BindingExtensions.GetRelayStateQuery``1(ITfoxtec.Identity.Saml2.Saml2Binding{``0})">
+            <summary>
+            Get the Relay State Query string as a Dictionary of key value pairs.
+            </summary>
+        </member>
+        <member name="T:ITfoxtec.Identity.Saml2.StringExtensions">
+            <summary>
+            Extension methods for string
+            </summary>
+        </member>
+        <member name="M:ITfoxtec.Identity.Saml2.StringExtensions.ToXmlDocument(System.String)">
+            <summary>
+            Converts an string to an XmlDocument.
+            </summary>
+        </member>
+        <member name="T:ITfoxtec.Identity.Saml2.X509Certificate2Extensions">
+            <summary>
+            Extension methods for Saml2X509Certificate.
+            </summary>
+        </member>
+        <member name="M:ITfoxtec.Identity.Saml2.X509Certificate2Extensions.GetSamlRSAPrivateKey(System.Security.Cryptography.X509Certificates.X509Certificate2)">
+            <summary>
+            Get the private RSA key from either Saml2X509Certificate or X509Certificate2.
+            </summary>
+        </member>
+        <member name="T:ITfoxtec.Identity.Saml2.XDocumentExtensions">
+            <summary>
+            Extension methods for XDocument
+            </summary>
+        </member>
+        <member name="M:ITfoxtec.Identity.Saml2.XDocumentExtensions.ToXmlDocument(System.Xml.Linq.XDocument)">
+            <summary>
+            Converts an XDocument to an XmlDocument.
+            </summary>
+        </member>
+        <member name="T:ITfoxtec.Identity.Saml2.XElementExtensions">
+            <summary>
+            Extension methods for XElement
+            </summary>
+        </member>
+        <member name="T:ITfoxtec.Identity.Saml2.XmlAttributeExtensions">
+            <summary>
+            Extension methods for XmlAttribute
+            </summary>
+        </member>
+        <member name="T:ITfoxtec.Identity.Saml2.XmlDocumentExtensions">
+            <summary>
+            Extension methods for XmlDocument
+            </summary>
+        </member>
+        <member name="M:ITfoxtec.Identity.Saml2.XmlDocumentExtensions.SignDocument(System.Xml.XmlDocument,System.Security.Cryptography.X509Certificates.X509Certificate2,System.String,System.Security.Cryptography.X509Certificates.X509IncludeOption,System.String)">
+            <summary>
+            Signs an XmlDocument with an xml signature using the signing certificate given as argument to the method.
+            </summary>
+            <param name="certificate">The certificate used to sign the document</param>
+            <param name="certificate">The Signature Algorithm used to sign the document</param>
+            <param name="includeOption">Certificate include option</param>
+            <param name="id">The is of the topmost element in the xmldocument</param>
+        </member>
+        <member name="M:ITfoxtec.Identity.Saml2.XmlDocumentExtensions.ToXDocument(System.Xml.XmlDocument)">
+            <summary>
+            Converts an XmlDocument to an XDocument.
+            </summary>
+        </member>
+        <member name="M:ITfoxtec.Identity.Saml2.XmlDocumentExtensions.ToXElement(System.Xml.XmlDocument)">
+            <summary>
+            Converts an XmlDocument to an XElement.
+            </summary>
+        </member>
+        <member name="T:ITfoxtec.Identity.Saml2.XmlElementExtensions">
+            <summary>
+            Extension methods for XmlElement
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Http.HttpRequest.Method">
+            <summary>
+            Gets or set the HTTP Method.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Http.HttpRequest.QueryString">
+            <summary>
+            Gets or set the Raw Query String.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Http.HttpRequest.Query">
+            <summary>
+            Gets or set the Query value collection.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Http.HttpRequest.Form">
+            <summary>
+            Gets or set the Request Body as a Form value collection.
+            </summary>
+        </member>
+        <member name="T:ITfoxtec.Identity.Saml2.Saml2AuthnRequest">
+            <summary>
+            Saml2 Authn Request.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Saml2AuthnRequest.ForceAuthn">
+            <summary>
+             [Optional]
+             A Boolean value. If "true", the identity provider MUST authenticate the presenter directly rather than
+             rely on a previous security context. If a value is not provided, the default is "false". However, if both
+             ForceAuthn and IsPassive are "true", the identity provider MUST NOT freshly authenticate the
+             presenter unless the constraints of IsPassive can be met.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Saml2AuthnRequest.IsPassive">
+            <summary>
+             [Optional]
+             A Boolean value. If "true", the identity provider and the user agent itself MUST NOT visibly take control
+             of the user interface from the requester and interact with the presenter in a noticeable fashion. If a
+             value is not provided, the default is "false".
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Saml2AuthnRequest.Subject">
+            <summary>
+            [Optional]
+            Specifies the requested subject of the resulting assertion(s). 
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Saml2AuthnRequest.NameIdPolicy">
+            <summary>
+            [Optional]
+            Specifies constraints on the name identifier to be used to represent the requested subject. If omitted,
+            then any type of identifier supported by the identity provider for the requested subject can be used,
+            constrained by any relevant deployment-specific policies, with respect to privacy, for example.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:ITfoxtec.Identity.Saml2.Saml2AuthnRequest.AssertionConsumerServiceUrl" -->
+        <!-- Badly formed XML comment ignored for member "P:ITfoxtec.Identity.Saml2.Saml2AuthnRequest.RequestedAuthnContext" -->
+        <member name="T:ITfoxtec.Identity.Saml2.Saml2AuthnResponse">
+            <summary>
+            Saml2 Authn Response.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Saml2AuthnResponse.ClaimsIdentity">
+            <summary>
+            Claims Identity.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Saml2AuthnResponse.Saml2SecurityToken">
+            <summary>
+            Saml2 Security Token.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Saml2AuthnResponse.SecurityTokenValidFrom">
+            <summary>
+            Gets the first instant in time at which this security token is valid.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Saml2AuthnResponse.SecurityTokenValidTo">
+            <summary>
+            Gets the last instant in time at which this security token is valid.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Saml2AuthnResponse.Saml2SecurityTokenHandler">
+            <summary>
+            Saml2 Security Token Handler.
+            </summary>
+        </member>
+        <member name="M:ITfoxtec.Identity.Saml2.Saml2AuthnResponse.CreateSecurityToken(System.String,System.Uri,System.Int32,System.Int32)">
+            <summary>
+            Creates the Security Token and add it to the response.
+            </summary>
+            <param name="appliesToAddress">The address for the AppliesTo property in the RequestSecurityTokenResponse.</param>
+            <param name="authnContext">The URI reference that identifies an authentication context class that describes the authentication context declaration that follows. [Saml2Core, 2.7.2.2]</param>
+            <param name="subjectConfirmationLifetime">The Subject Confirmation Lifetime in minutes.</param>
+            <param name="issuedTokenLifetime">The Issued Token Lifetime in minutes.</param>
+            <returns>The SAML 2.0 Security Token.</returns>
+        </member>
+        <member name="M:ITfoxtec.Identity.Saml2.Saml2AuthnResponse.CreateSecurityToken(System.IdentityModel.Tokens.SecurityTokenDescriptor,System.IdentityModel.Tokens.Saml2AuthenticationStatement,System.IdentityModel.Tokens.Saml2SubjectConfirmation)">
+            <summary>
+            Creates the Security Token and add it to the response.
+            </summary>
+            <param name="tokenDescriptor">This is a place holder for all the attributes related to the issued token.</param>
+            <param name="authenticationStatement">Represents the AuthnStatement element specified in [Saml2Core, 2.7.2].</param>
+            <param name="subjectConfirmation">Represents the SubjectConfirmation element specified in [Saml2Core, 2.4.1.1].</param>
+            <returns>The SAML 2.0 Security Token.</returns>
+        </member>
+        <member name="T:ITfoxtec.Identity.Saml2.Saml2LogoutRequest">
+            <summary>
+            Saml2 Logout Request.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Saml2LogoutRequest.NotOnOrAfter">
+            <summary>
+            [Optional]
+            The time at which the request expires, after which the recipient may discard the message. The time
+            value is encoded in UTC, as described in Section 1.3.3.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Saml2LogoutRequest.Reason">
+            <summary>
+            [Optional]
+            An indication of the reason for the logout, in the form of a URI reference.
+            </summary>
+        </member>
+        <member name="T:ITfoxtec.Identity.Saml2.Saml2LogoutResponse">
+            <summary>
+            Saml2 Logout Response.
+            </summary>
+        </member>
+        <member name="T:ITfoxtec.Identity.Saml2.Saml2Metadata">
+            <summary>
+            Saml2 Metadata.
+            </summary>
+        </member>
+        <member name="M:ITfoxtec.Identity.Saml2.Saml2Metadata.#ctor(ITfoxtec.Identity.Saml2.Schemas.Metadata.EntityDescriptor)">
+            <param name="entityDescriptor">[Required] The EntitiesDescriptor element contains the metadata for an optionally named group of SAML entities.</param>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Saml2Metadata.EntityDescriptor">
+            <summary>
+            [Required]
+            The EntitiesDescriptor element contains the metadata for an optionally named group of SAML entities.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Saml2Metadata.XmlDocument">
+            <summary>
+            Saml2 metadata Xml Document.
+            </summary>
+        </member>
+        <member name="M:ITfoxtec.Identity.Saml2.Saml2Metadata.ToXml">
+            <summary>
+            To metadata Xml.
+            </summary>
+        </member>
+        <member name="M:ITfoxtec.Identity.Saml2.Saml2Metadata.CreateMetadata">
+            <summary>
+            Creates Saml2 metadata Xml Document.
+            </summary>
+        </member>
+        <member name="T:ITfoxtec.Identity.Saml2.Saml2Request">
+            <summary>
+            Generic Saml2 Request.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Saml2Request.Id">
+            <summary>
+            [Required]
+            An identifier for the request. It is of type xs:ID and MUST follow the requirements specified in Section
+            1.3.4 for identifier uniqueness. The values of the ID attribute in a request and the InResponseTo
+            attribute in the corresponding response MUST match.
+            </summary>
+            <value>The ID.</value>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Saml2Request.IdAsString">
+            <summary>
+            The ID as string.
+            </summary>
+            <value>The ID string.</value>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Saml2Request.Version">
+            <summary>
+            [Required]
+            The version of this request. The identifier for the version of SAML defined in this specification is "2.0".
+            SAML versioning is discussed in Section 4.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Saml2Request.IssueInstant">
+            <summary>
+            [Required]
+            The time instant of issue of the request. The time value is encoded in UTC, as described in Section 1.3.3.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Saml2Request.Destination">
+            <summary>
+            [Optional]
+            A URI reference indicating the address to which this request has been sent. This is useful to prevent
+            malicious forwarding of requests to unintended recipients, a protection that is required by some
+            protocol bindings. If it is present, the actual recipient MUST check that the URI reference identifies the
+            location at which the message was received. If it does not, the request MUST be discarded. Some
+            protocol bindings may require the use of this attribute (see [SAMLBind]).
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Saml2Request.Consent">
+            <summary>
+            [Optional]
+            Indicates whether or not (and under what conditions) consent has been obtained from a principal in
+            the sending of this request. See Section 8.4 for some URI references that MAY be used as the value
+            of the Consent attribute and their associated descriptions. If no Consent value is provided, the
+            identifier urn:oasis:names:tc:SAML:2.0:consent:unspecified (see Section 8.4.1) is in effect.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Saml2Request.Issuer">
+            <summary>
+            [Optional]
+            Identifies the entity that generated the response message. (For more information on this element, see
+            Section 2.2.5.)
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Saml2Request.Extensions">
+            <summary>
+            [Optional]
+            This extension point contains optional protocol message extension elements that are agreed on between 
+            the communicating parties. No extension schema is required in order to make use of this extension point, 
+            and even if one is provided, the lax validation setting does not impose a requirement for the extension 
+            to be valid.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Saml2Request.NameId">
+            <summary>
+            [Required in Logout Request otherwise Optional]
+            The identifier and associated attributes (in plaintext or encrypted form) that specify the principal as
+            currently recognized by the identity and service providers prior to this request. (For more information
+            on this element, see Section 2.2.)
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Saml2Request.SessionIndex">
+            <summary>
+            [Optional]
+            The identifier that indexes this session at the message recipient.
+            </summary>
+        </member>
+        <member name="T:ITfoxtec.Identity.Saml2.Saml2Response">
+            <summary>
+            Generic Saml2 Response.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Saml2Response.Status">
+            <summary>
+            [Required]
+            A code representing the status of the corresponding request.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Saml2Response.InResponseTo">
+            <summary>
+            [Optional]
+            A reference to the identifier of the request to which the response corresponds, if any. If the response
+            is not generated in response to a request, or if the ID attribute value of a request cannot be
+            determined (for example, the request is malformed), then this attribute MUST NOT be present.
+            Otherwise, it MUST
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Saml2Response.InResponseToAsString">
+            <summary>
+            The InResponseTo as string.
+            </summary>
+            <value>The InResponseTo string.</value>
+        </member>
+        <member name="T:ITfoxtec.Identity.Saml2.Schemas.AuthnContextClassTypes">
+            <summary>
+            Authentication context is defined as the information, additional to the authentication assertion itself, that
+            the relying party may require before it makes an entitlements decision with respect to an authentication
+            assertion. Such context may include, but is not limited to, the actual authentication method used (see the
+            SAML assertions and protocols specification [SAMLCore] for more information).
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.AuthnContextClassTypes.InternetProtocol">
+            <summary>
+            The Internet Protocol class is applicable when a principal is authenticated through the use of a provided IP address.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.AuthnContextClassTypes.InternetProtocolPassword">
+            <summary>
+            The Internet Protocol Password class is applicable when a principal is authenticated through the use of a
+            provided IP address, in addition to a username/password.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.AuthnContextClassTypes.Kerberos">
+            <summary>
+            [Supported by AD FS 2.0]
+            This class is applicable when the principal has authenticated using a password to a local authentication
+            authority, in order to acquire a Kerberos ticket. That Kerberos ticket is then used for subsequent network
+            authentication.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.AuthnContextClassTypes.IntegratedWindowsAuthentication">
+            <summary>
+            [Supported by AD FS 2.0]
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.AuthnContextClassTypes.MobileOneFactorUnregistered">
+            <summary>
+            Reflects no mobile customer registration procedures and an authentication of the mobile device without
+            requiring explicit end-user interaction. This context class authenticates only the device and never the user;
+            it is useful when services other than the mobile operator want to add a secure device authentication to
+            their authentication process.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.AuthnContextClassTypes.MobileTwoFactorUnregistered">
+            <summary>
+            Reflects no mobile customer registration procedures and a two-factor based authentication, such as
+            secure device and user PIN. This context class is useful when a service other than the mobile operator
+            wants to link their customer ID to a mobile supplied two-factor authentication service by capturing mobile
+            phone data at enrollment.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.AuthnContextClassTypes.MobileOneFactorContract">
+            <summary>
+            Reflects mobile contract customer registration procedures and a single factor authentication. For example,
+            a digital signing device with tamper resistant memory for key storage, such as the mobile MSISDN, but no
+            required PIN or biometric for real-time user authentication.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.AuthnContextClassTypes.MobileTwoFactorContract">
+            <summary>
+            Reflects mobile contract customer registration procedures and a two-factor based authentication. For
+            example, a digital signing device with tamper resistant memory for key storage, such as a GSM SIM, that
+            requires explicit proof of user identity and intent, such as a PIN or biometric.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.AuthnContextClassTypes.UserNameAndPassword">
+            <summary>
+            [Supported by AD FS 2.0]
+            The Password class is applicable when a principal authenticates to an authentication authority through the
+            presentation of a password over an unprotected HTTP session.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.AuthnContextClassTypes.PasswordProtectedTransport">
+            <summary>
+            [Supported by AD FS 2.0]
+            The PasswordProtectedTransport class is applicable when a principal authenticates to an authentication
+            authority through the presentation of a password over a protected session.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.AuthnContextClassTypes.SecureRemotePassword">
+            <summary>
+            The Secure Remote Password class is applicable when the authentication was performed by means of
+            Secure Remote Password as specified in [RFC 2945].
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.AuthnContextClassTypes.PreviousSession">
+            <summary>
+            The PreviousSession class is applicable when a principal had authenticated to an authentication authority
+            at some point in the past using any authentication context supported by that authentication authority.
+            Consequently, a subsequent authentication event that the authentication authority will assert to the relying
+            party may be significantly separated in time from the principal's current resource access request.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.AuthnContextClassTypes.X509Certificate">
+            <summary>
+            [Supported by AD FS 2.0]
+            The X509 context class indicates that the principal authenticated by means of a digital signature where the
+            key was validated as part of an X.509 Public Key Infrastructure. 
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.AuthnContextClassTypes.PublicKeyPgp">
+            <summary>
+            The PGP context class indicates that the principal authenticated by means of a digital signature where the
+            key was validated as part of a PGP Public Key Infrastructure. 
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.AuthnContextClassTypes.PublicKeySpki">
+            <summary>
+            The SPKI context class indicates that the principal authenticated by means of a digital signature where the
+            key was validated via an SPKI Infrastructure.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.AuthnContextClassTypes.PublicKeyXmlDigitalDignature">
+            <summary>
+            This context class indicates that the principal authenticated by means of a digital signature according to
+            the processing rules specified in the XML Digital Signature specification [XMLSig].
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.AuthnContextClassTypes.Smartcard">
+            <summary>
+            The Smartcard class is identified when a principal authenticates to an authentication authority using a
+            smartcard.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.AuthnContextClassTypes.SmartcardPKI">
+            <summary>
+            The SmartcardPKI class is applicable when a principal authenticates to an authentication authority through
+            a two-factor authentication mechanism using a smartcard with enclosed private key and a PIN.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.AuthnContextClassTypes.SoftwarePki">
+            <summary>
+            The Software-PKI class is applicable when a principal uses an X.509 certificate stored in software to
+            authenticate to the authentication authority.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.AuthnContextClassTypes.Telephony">
+            <summary>
+            This class is used to indicate that the principal authenticated via the provision of a fixed-line telephone
+            number, transported via a telephony protocol such as ADSL.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.AuthnContextClassTypes.TelephonyNomad">
+            <summary>
+            Indicates that the principal is "roaming" (perhaps using a phone card) and authenticates via the means of
+            the line number, a user suffix, and a password element.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.AuthnContextClassTypes.TelephonyPersonal">
+            <summary>
+            This class is used to indicate that the principal authenticated via the provision of a fixed-line telephone
+            number and a user suffix, transported via a telephony protocol such as ADSL. 
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.AuthnContextClassTypes.TelephonyAuthenticated">
+            <summary>
+            Indicates that the principal authenticated via the means of the line number, a user suffix, and a password element.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.AuthnContextClassTypes.TransportLayerSecurityClient">
+            <summary>
+            [Supported by AD FS 2.0]
+            This class indicates that the principal authenticated by means of a client certificate, secured with the
+            SSL/TLS transport.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.AuthnContextClassTypes.TimeSyncToken">
+            <summary>
+            The TimeSyncToken class is applicable when a principal authenticates through a time synchronization token.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.AuthnContextClassTypes.Unspecified">
+            <summary>
+            The Unspecified class indicates that the authentication was performed by unspecified means.
+            </summary>
+        </member>
+        <member name="T:ITfoxtec.Identity.Saml2.Schemas.AuthnContextComparisonTypes">
+            <summary>
+            Comparison methods.
+            </summary>
+        </member>
+        <member name="T:ITfoxtec.Identity.Saml2.Schemas.ConsentIdentifierTypes">
+            <summary>
+            The following identifiers MAY be used in the Consent attribute defined on the RequestAbstractType and
+            StatusResponseType complex types to communicate whether a principal gave consent, and under what
+            conditions, for the message.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.ConsentIdentifierTypes.Unspecified">
+            <summary>
+            No claim as to principal consent is being made.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.ConsentIdentifierTypes.Obtained">
+            <summary>
+            Indicates that a principal’s consent has been obtained by the issuer of the message.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.ConsentIdentifierTypes.Prior">
+            <summary>
+            Indicates that a principal’s consent has been obtained by the issuer of the message at some point prior to
+            the action that initiated the message.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.ConsentIdentifierTypes.Implicit">
+            <summary>
+            Indicates that a principal’s consent has been implicitly obtained by the issuer of the message during the
+            action that initiated the message, as part of a broader indication of consent. Implicit consent is typically
+            more proximal to the action in time and presentation than prior consent, such as part of a session of
+            activities.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.ConsentIdentifierTypes.Explicit">
+            <summary>
+            Indicates that a principal’s consent has been explicitly obtained by the issuer of the message during the
+            action that initiated the message.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.ConsentIdentifierTypes.Unavailable">
+            <summary>
+            Indicates that the issuer of the message did not obtain consent.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.ConsentIdentifierTypes.Inapplicable">
+            <summary>
+            Indicates that the issuer of the message does not believe that they need to obtain or report consent.
+            </summary>
+        </member>
+        <member name="T:ITfoxtec.Identity.Saml2.Schemas.Extensions">
+            <summary>
+            This extension point contains optional protocol message extension elements that are agreed on between 
+            the communicating parties.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Extensions.Data">
+            <summary>
+            [Optional] 
+            Extension data added as text insight the Extensions element.
+            </summary>
+        </member>
+        <member name="T:ITfoxtec.Identity.Saml2.Schemas.Metadata.AssertionConsumerService">
+            <summary>
+            Describe indexed endpoints that support the profiles of the
+            Authentication Request protocol defined in [SAMLProf]. All service providers support at least one
+            such endpoint, by definition.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Metadata.AssertionConsumerService.Binding">
+            <summary>
+            [Required]
+            A required attribute that specifies the SAML binding supported by the endpoint. Each binding is
+            assigned a URI to identify it.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Metadata.AssertionConsumerService.Location">
+            <summary>
+            [Required]
+            A required URI attribute that specifies the location of the endpoint. The allowable syntax of this
+            URI depends on the protocol binding.
+            </summary>
+        </member>
+        <member name="T:ITfoxtec.Identity.Saml2.Schemas.Metadata.AttributeConsumingService">
+            <summary>
+            The AttributeConsumingService element defines a particular service offered by the service
+            provider in terms of the attributes the service requires or desires.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Metadata.AttributeConsumingService.ServiceName">
+            <summary>
+            [Required]
+            Language-qualified names for the service.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Metadata.AttributeConsumingService.RequestedAttributes">
+            <summary>
+            [Required]
+            A required element specifying attributes required or desired by this service.
+            </summary>
+        </member>
+        <member name="T:ITfoxtec.Identity.Saml2.Schemas.Metadata.ContactPerson">
+            <summary>
+            The ContactPerson element specifies basic contact information about a person responsible in some
+            capacity for a SAML entity or role. The use of this element is always optional. Its content is informative in
+            nature and does not directly map to any core SAML elements or attributes.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Metadata.ContactPerson.ContactType">
+            <summary>
+            [Required]
+            Specifies the type of contact using the ContactTypeType enumeration. The possible values are
+            technical, support, administrative, billing, and other.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Metadata.ContactPerson.Company">
+            <summary>
+            [Optional]
+            Optional string element that specifies the name of the company for the contact person.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Metadata.ContactPerson.GivenName">
+            <summary>
+            [Optional]
+            Optional string element that specifies the given (first) name of the contact person.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Metadata.ContactPerson.SurName">
+            <summary>
+            [Optional]
+            Optional string element that specifies the surname of the contact person.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Metadata.ContactPerson.EmailAddress">
+            <summary>
+            [Optional]
+            Optional string element containing mailto: URIs representing e-mail addresses belonging to the
+            contact person.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Metadata.ContactPerson.TelephoneNumber">
+            <summary>
+            [Optional]
+            Optional string element specifying a telephone number of the contact person.
+            </summary>
+        </member>
+        <member name="T:ITfoxtec.Identity.Saml2.Schemas.Metadata.EndpointType">
+            <summary>
+            The complex type EndpointType describes a SAML protocol binding endpoint at which a SAML entity can be sent 
+            protocol messages.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Metadata.EndpointType.Binding">
+            <summary>
+            [Required]
+            A required attribute that specifies the SAML binding supported by the endpoint. Each binding is
+            assigned a URI to identify it.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Metadata.EndpointType.Location">
+            <summary>
+            [Required]
+            A required URI attribute that specifies the location of the endpoint. The allowable syntax of this
+            URI depends on the protocol binding.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Metadata.EndpointType.ResponseLocation">
+            <summary>
+            [Optional]
+            Optionally specifies a different location to which response messages sent as part of the protocol
+            or profile should be sent. The allowable syntax of this URI depends on the protocol binding.
+            </summary>
+        </member>
+        <member name="T:ITfoxtec.Identity.Saml2.Schemas.Metadata.EntityDescriptor">
+            <summary>
+            The EntitiesDescriptor element contains the metadata for an optionally named group of SAML entities.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Metadata.EntityDescriptor.EntityId">
+            <summary>
+            Specifies the unique identifier of the SAML entity whose metadata is described by the element's contents.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Metadata.EntityDescriptor.Id">
+            <summary>
+            A document-unique identifier for the element, typically used as a reference point when signing.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Metadata.EntityDescriptor.IdAsString">
+            <summary>
+            The ID as string.
+            </summary>
+            <value>The ID string.</value>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Metadata.EntityDescriptor.MetadataSigningCertificate">
+            <summary>
+            [Optional]
+            An metadata XML signature that authenticates the containing element and its contents.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Metadata.EntityDescriptor.CertificateIncludeOption">
+            <summary>
+            [Optional]
+            Default EndCertOnly (Only the end certificate is included in the X.509 chain information).
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Metadata.EntityDescriptor.ValidUntil">
+            <summary>
+            [Optional]
+            Optional attribute indicates the expiration time of the metadata contained in the element and any contained elements.
+            
+            Metadata is valid until in days from now.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Metadata.EntityDescriptor.SPSsoDescriptor">
+            <summary>
+            [Optional]
+            The SPSSODescriptor element extends SSODescriptorType with content reflecting profiles specific
+            to service providers. 
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Metadata.EntityDescriptor.IdPSsoDescriptor">
+            <summary>
+            [Optional]
+            The IDPSSODescriptor element extends SSODescriptorType with content reflecting profiles specific 
+            to identity providers supporting SSO.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Metadata.EntityDescriptor.ContactPerson">
+            <summary>
+            [Optional]
+            Optional element identifying various kinds of contact personnel.
+            </summary>
+        </member>
+        <member name="T:ITfoxtec.Identity.Saml2.Schemas.Metadata.IdPSsoDescriptor">
+            <summary>
+            The IDPSSODescriptor element extends SSODescriptorType with content reflecting profiles specific 
+            to identity providers supporting SSO.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Metadata.IdPSsoDescriptor.WantAuthnRequestsSigned">
+            <summary>
+            [Optional]
+            Optional attribute that indicates to service providers whether or not they can expect an 
+            unsigned &lt;AuthnRequest&gt; message to be accepted by the identity provider. 
+            If omitted, the value is assumed to be false.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Metadata.IdPSsoDescriptor.SingleSignOnServices">
+            <summary>
+            One or more elements of type EndpointType that describe endpoints that support the profiles of the 
+            Authentication Request protocol defined in [SAMLProf]. All identity providers support at least one 
+            such endpoint, by definition. The ResponseLocation attribute MUST be omitted. 
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Metadata.Saml2MetadataConstants.MetadataNamespace">
+            <summary>
+            The XML namespace of the Metadata.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Metadata.Saml2MetadataConstants.MetadataNamespaceX">
+            <summary>
+            The XML namespace of the Metadata.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Metadata.Saml2MetadataConstants.MetadataNamespaceNameX">
+            <summary>
+            The XML Namespace Name of the Metadata.
+            </summary>
+        </member>
+        <member name="T:ITfoxtec.Identity.Saml2.Schemas.Metadata.ServiceName">
+            <summary>
+            Language-qualified name for the service.
+            </summary>
+        </member>
+        <member name="M:ITfoxtec.Identity.Saml2.Schemas.Metadata.ServiceName.#ctor(System.String,System.String)">
+            <param name="name">Name for the service.</param>
+            <param name="lang">Language.</param>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Metadata.ServiceName.Lang">
+            <summary>
+            Language.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Metadata.ServiceName.Name">
+            <summary>
+            Name for the service.
+            </summary>
+        </member>
+        <member name="T:ITfoxtec.Identity.Saml2.Schemas.Metadata.SingleLogoutService">
+            <summary>
+            Elements of type EndpointType that describe endpoints that support the Single Logout profiles defined in [SAMLProf].
+            </summary>
+        </member>
+        <member name="T:ITfoxtec.Identity.Saml2.Schemas.Metadata.SingleSignOnService">
+            <summary>
+            Elements of type EndpointType that describe endpoints that support the Single SignOn profiles defined in [SAMLProf].
+            </summary>
+        </member>
+        <member name="T:ITfoxtec.Identity.Saml2.Schemas.Metadata.SPSsoDescriptor">
+            <summary>
+            The SPSSODescriptor element extends SSODescriptorType with content reflecting profiles specific
+            to service providers. 
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Metadata.SPSsoDescriptor.AuthnRequestsSigned">
+            <summary>
+            [Optional]
+            Optional attribute that indicates whether the samlp:AuthnRequest messages sent by this
+            service provider will be signed. If omitted, the value is assumed to be false.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Metadata.SPSsoDescriptor.WantAssertionsSigned">
+            <summary>
+            [Optional]
+            Optional attribute that indicates a requirement for the saml:Assertion elements received by
+            this service provider to be signed. If omitted, the value is assumed to be false. This requirement
+            is in addition to any requirement for signing derived from the use of a particular profile/binding
+            combination.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Metadata.SPSsoDescriptor.AssertionConsumerServices">
+            <summary>
+            [Required]
+            One element that describe indexed endpoints that support the profiles of the
+            Authentication Request protocol defined in [SAMLProf]. All service providers support at least one
+            such endpoint, by definition.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Metadata.SPSsoDescriptor.AttributeConsumingServices">
+            <summary>
+            [Optional]
+            Zero or one element that describe an application or service provided by the service provider
+            that requires or desires the use of SAML attributes.
+            </summary>
+        </member>
+        <member name="T:ITfoxtec.Identity.Saml2.Schemas.Metadata.SsoDescriptorType">
+            <summary>
+            The SSODescriptorType abstract type is a common base type for the concrete types
+            SPSSODescriptorType and IDPSSODescriptorType, described in subsequent sections. It extends
+            RoleDescriptorType with elements reflecting profiles common to both identity providers and service
+            providers that support SSO.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Metadata.SsoDescriptorType.protocolSupportEnumeration">
+            <summary>
+            A whitespace-delimited set of URIs that identify the set of protocol specifications supported by the
+            role element. For SAML V2.0 entities, this set MUST include the SAML protocol namespace URI,
+            urn:oasis:names:tc:SAML:2.0:protocol. 
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Metadata.SsoDescriptorType.CertificateIncludeOption">
+            <summary>
+            [Optional]
+            Default EndCertOnly (Only the end certificate is included in the X.509 chain information).
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Metadata.SsoDescriptorType.SigningCertificates">
+            <summary>
+            [Optional]
+            Signing Certificate for Key Descriptor
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Metadata.SsoDescriptorType.EncryptionCertificates">
+            <summary>
+            [Optional]
+            Encryption Certificate for Key Descriptor
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Metadata.SsoDescriptorType.SingleLogoutServices">
+            <summary>
+            [Optional]
+            Zero or one element of type EndpointType that describe endpoints that support the Single
+            Logout profiles defined in [SAMLProf].
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Metadata.SsoDescriptorType.NameIDFormats">
+            <summary>
+            [Optional]
+            Zero or one element of type anyURI that enumerate the name identifier formats supported by
+            this system entity acting in this role. See Section 8.3 of [SAMLCore] for some possible values for
+            this element.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:ITfoxtec.Identity.Saml2.Schemas.NameID" -->
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.NameID.ID">
+            <summary>
+            String content containing the actual identifier.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.NameID.Format">
+            <summary>
+            [Optional]
+            A URI reference representing the classification of string-based identifier information. See Section
+            8.3 for the SAML-defined URI references that MAY be used as the value of the Format attribute
+            and their associated descriptions and processing rules.Unless otherwise specified by an element
+            based on this type, if no Format value is provided, then the value
+            urn:oasis:names:tc:SAML:1.0:nameid-format:unspecified(see Section 8.3.1) is in effect.
+            </summary>
+        </member>
+        <member name="T:ITfoxtec.Identity.Saml2.Schemas.NameIdentifierFormats">
+            <summary>
+            Formats of nameidentifiers
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.NameIdentifierFormats.Unspecified">
+            <summary>
+            Unspecified name identifier format
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.NameIdentifierFormats.Email">
+            <summary>
+            Email name identifier format
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.NameIdentifierFormats.X509SubjectName">
+            <summary>
+            X509SubjectName name identifier format
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.NameIdentifierFormats.Windows">
+            <summary>
+            Windows name identifier format
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.NameIdentifierFormats.Kerberos">
+            <summary>
+            Kerberos name identifier format
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.NameIdentifierFormats.Entity">
+            <summary>
+            Entity name identifier format
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.NameIdentifierFormats.Persistent">
+            <summary>
+            Persistent name identifier format
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.NameIdentifierFormats.Transient">
+            <summary>
+            Transient name identifier format
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:ITfoxtec.Identity.Saml2.Schemas.NameIdPolicy" -->
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.NameIdPolicy.AllowCreate">
+            <summary>
+            A Boolean value used to indicate whether the identity provider is allowed, in the course of fulfilling the
+            request, to create a new identifier to represent the principal. Defaults to "false". When "false", the
+            requester constrains the identity provider to only issue an assertion to it if an acceptable identifier for
+            the principal has already been established. Note that this does not prevent the identity provider from
+            creating such identifiers outside the context of this specific request (for example, in advance for a
+            large number of principals).
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.NameIdPolicy.Format">
+            <summary>
+            Specifies the URI reference corresponding to a name identifier format defined in this or another
+            specification (see Section 8.3 for examples). The additional value of
+            urn:oasis:names:tc:SAML:2.0:nameid-format:encrypted is defined specifically for use
+            within this attribute to indicate a request that the resulting identifier be encrypted.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.NameIdPolicy.SPNameQualifier">
+            <summary>
+            Optionally specifies that the assertion subject's identifier be returned (or created) in the namespace of
+            a service provider other than the requester, or in the namespace of an affiliation group of service
+            providers. See for example the definition of urn:oasis:names:tc:SAML:2.0:nameidformat:
+            persistent in Section 8.3.7.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:ITfoxtec.Identity.Saml2.Schemas.ProcessingRules" -->
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.ProcessingRules.User">
+            <summary>
+            Specifies that the message is being sent because the principal wishes to terminate the indicated session.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.ProcessingRules.Admin">
+            <summary>
+            Specifies that the message is being sent because an administrator wishes to terminate the indicated session for that principal.
+            </summary>
+        </member>
+        <member name="T:ITfoxtec.Identity.Saml2.Schemas.ProtocolBindings">
+            <summary>
+            Protocol bindings
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.ProtocolBindings.HttpRedirect">
+            <summary>
+            HTTP Redirect protocol binding
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.ProtocolBindings.HttpPost">
+            <summary>
+            HTTP Post protocol binding
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.RequestedAuthnContext.Comparison">
+            <summary>
+            [Optional]
+            Specifies the comparison method used to evaluate the requested context classes or statements, one
+            of "exact", "minimum", "maximum", or "better". The default is "exact".
+            
+            If Comparison is set to "exact" or omitted, then the resulting authentication context in the authentication
+            statement MUST be the exact match of at least one of the authentication contexts specified.
+            If Comparison is set to "minimum", then the resulting authentication context in the authentication
+            statement MUST be at least as strong (as deemed by the responder) as one of the authentication
+            contexts specified.
+            If Comparison is set to "better", then the resulting authentication context in the authentication
+            statement MUST be stronger (as deemed by the responder) than any one of the authentication contexts
+            specified.
+            If Comparison is set to "maximum", then the resulting authentication context in the authentication
+            statement MUST be as strong as possible (as deemed by the responder) without exceeding the strength
+            of at least one of the authentication contexts specified.
+            </summary>
+        </member>
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.RequestedAuthnContext.AuthnContextClassRef">
+            <summary>
+            [One or More]
+            Specifies one or more URI references identifying authentication context classes or declarations.
+            These elements are defined in Section 2.7.2.2. For more information about authentication context
+            classes, see [SAMLAuthnCxt].
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2Constants.AuthenticationScheme">
+            <summary>
+            SAML 2.0 Authentication Type.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2Constants.VersionNumber">
+            <summary>
+            SAML Version Number.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2Constants.Saml2BearerToken">
+            <summary>
+            Saml2 Bearer token.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2Constants.AssertionNamespace">
+            <summary>
+            The XML namespace of the SAML2 Assertion.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2Constants.AssertionNamespaceX">
+            <summary>
+            The XML namespace of the SAML2 Assertion.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2Constants.AssertionNamespaceNameX">
+            <summary>
+            The XML Namespace Name of the SAML2 Assertion.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2Constants.ProtocolNamespace">
+            <summary>
+            The XML namespace of the SAML2 Protocol.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2Constants.ProtocolNamespaceX">
+            <summary>
+            The XML namespace of the SAML2 Protocol.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2Constants.ProtocolNamespaceNameX">
+            <summary>
+            The XML Namespace Name of the SAML2 Protocol.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2SecurityAlgorithms.Sha1Digest">
+            <summary>
+            URI for the SHA-1 digest algorithm.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2SecurityAlgorithms.RsaSha1Signature">
+            <summary>
+            URI for the RSA-SHA-1 signature method for signing XML.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2SecurityAlgorithms.Sha256Digest">
+            <summary>
+            URI for the SHA-256 digest algorithm.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2SecurityAlgorithms.RsaSha256Signature">
+            <summary>
+            URI for the RSA-SHA-256 signature method for signing XML.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2SecurityAlgorithms.Sha384Digest">
+            <summary>
+            URI for the SHA-384 digest algorithm.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2SecurityAlgorithms.RsaSha384Signature">
+            <summary>
+            URI for the RSA-SHA-384 signature method for signing XML.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2SecurityAlgorithms.Sha512Digest">
+            <summary>
+            URI for the SHA-512 digest algorithm.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2SecurityAlgorithms.RsaSha512Signature">
+            <summary>
+            URI for the RSA-SHA-512 signature method for signing XML.
+            </summary>
+        </member>
+        <member name="T:ITfoxtec.Identity.Saml2.Schemas.Saml2StatusCodes">
+            <summary>
+            Status codes, mapped against states in section 3.2.2.2 in the SAML2 spec.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2StatusCodes.Success">
+            <summary>
+            The request succeeded.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2StatusCodes.Requester">
+            <summary>
+            The request could not be performed due to an error on the part of the requester.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2StatusCodes.Responder">
+            <summary>
+            The request could not be performed due to an error on the part of the SAML responder or SAML authority.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2StatusCodes.VersionMismatch">
+            <summary>
+            The SAML responder could not process the request because the version of the request message was incorrect.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2StatusCodes.AuthnFailed">
+            <summary>
+            The responding provider was unable to successfully authenticate the principal.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2StatusCodes.InvalidAttrNameOrValue">
+            <summary>
+            Unexpected or invalid content was encountered within a &lt;saml:Attribute&gt; or &lt;saml:AttributeValue&gt; element.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2StatusCodes.InvalidNameIdPolicy">
+            <summary>
+            The responding provider cannot or will not support the requested name identifier policy.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2StatusCodes.NoAuthnContext">
+            <summary>
+            The specified authentication context requirements cannot be met by the responder.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2StatusCodes.NoAvailableIDP">
+            <summary>
+            Used by an intermediary to indicate that none of the supported identity provider &lt;Loc&gt; elements in an
+            &lt;IDPList&gt; can be resolved or that none of the supported identity providers are available.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2StatusCodes.NoPassive">
+            <summary>
+            Indicates the responding provider cannot authenticate the principal passively, as has been requested.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2StatusCodes.NoSupportedIDP">
+            <summary>
+            Used by an intermediary to indicate that none of the identity providers in an &lt;IDPList&gt; are
+            supported by the intermediary.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2StatusCodes.PartialLogout">
+            <summary>
+            Used by a session authority to indicate to a session participant that it was not able to propagate logout
+            to all other session participants.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2StatusCodes.ProxyCountExceeded">
+            <summary>
+            Indicates that a responding provider cannot authenticate the principal directly and is not permitted to
+            proxy the request further.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2StatusCodes.RequestDenied">
+            <summary>
+            The SAML responder or SAML authority is able to process the request but has chosen not to respond.
+            This status code MAY be used when there is concern about the security context of the request
+            message or the sequence of request messages received from a particular requester.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2StatusCodes.RequestUnsupported">
+            <summary>
+            The SAML responder or SAML authority does not support the request.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2StatusCodes.RequestVersionDeprecated">
+            <summary>
+            The SAML responder cannot process any requests with the protocol version specified in the request.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2StatusCodes.RequestVersionTooHigh">
+            <summary>
+            The SAML responder cannot process the request because the protocol version specified in the
+            request message is a major upgrade from the highest protocol version supported by the responder.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2StatusCodes.RequestVersionTooLow">
+            <summary>
+            The SAML responder cannot process the request because the protocol version specified in the
+            request message is too low.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2StatusCodes.ResourceNotRecognized">
+            <summary>
+            The resource value provided in the request message is invalid or unrecognized.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2StatusCodes.TooManyResponses">
+            <summary>
+            The response message would contain more elements than the SAML responder is able to return.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2StatusCodes.UnknownAttrProfile">
+            <summary>
+            An entity that has no knowledge of a particular attribute profile has been presented with an attribute
+            drawn from that profile.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2StatusCodes.UnknownPrincipal">
+            <summary>
+            The responding provider does not recognize the principal specified or implied by the request.
+            </summary>
+        </member>
+        <member name="F:ITfoxtec.Identity.Saml2.Schemas.Saml2StatusCodes.UnsupportedBinding">
+            <summary>
+            The SAML responder cannot properly fulfill the request using the protocol binding specified in the
+            request.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:ITfoxtec.Identity.Saml2.Schemas.Subject" -->
+        <member name="P:ITfoxtec.Identity.Saml2.Schemas.Subject.NameID">
+            <summary>
+            Contains an identifier.
+            </summary>
+        </member>
+    </members>
+</doc>
